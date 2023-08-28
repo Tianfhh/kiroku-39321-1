@@ -4,15 +4,38 @@
   <div class='entry-contents'>
     <ul class='entry-lists'>
 
+     <% @entries.each do |entry| %>
+
       <li class='list'>
-        <%= link_to "#" do %>
+        <%= link_to entries_path(entry.id) do %>
         <div class='entry-img-content'>
-          <%= image_tag "1.png", class: "entry-img" %>
+          <%= image_tag entry.image, class: "entry-img" if entry.image.attached? %>
 
         </div>
         <div class='entry-info'>
           <h3 class='entry-name'>
-            <%= "タイトル" %>
+            <%= entry.title %>
+          </h3>
+          <div class='entry-price'>
+           <%= entry.user.name %>
+            <div class='heart-btn'>
+              <%= image_tag "heart.png", class:"heart-icon" %>
+              <span class='heart-count'>0</span>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </li>
+     <% end %>
+
+      <% if @entries.empty? %>
+      
+      <li class='list'>
+        <%= link_to '#' do %>
+        <%= image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg", class: "entry-img" %>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            記録投稿してね！
           </h3>
           <div class='entry-price'>
            <%= "ユーザー名" %>
@@ -24,6 +47,8 @@
         </div>
         <% end %>
       </li>
+
+      <% end %>
 
     </ul>
   </div>

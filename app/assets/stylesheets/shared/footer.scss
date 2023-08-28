@@ -3,7 +3,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
-  background-color: #FFEBE5; 
+  background-color: #FFEBE5;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,4 +16,9 @@
 .footer-explain {
   font-size: 3vh;
   line-height: 30px;
+}
+
+.logo-bottom {
+  width: 100%;
+  vertical-align: bottom;
 }
