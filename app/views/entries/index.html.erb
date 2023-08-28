@@ -1,0 +1,38 @@
+<%= render "shared/header" %>
+<div class='main'>
+
+  <div class='entry-contents'>
+    <ul class='entry-lists'>
+
+      <li class='list'>
+        <%= link_to "#" do %>
+        <div class='entry-img-content'>
+          <%= image_tag "1.png", class: "entry-img" %>
+
+        </div>
+        <div class='entry-info'>
+          <h3 class='entry-name'>
+            <%= "タイトル" %>
+          </h3>
+          <div class='entry-price'>
+           <%= "ユーザー名" %>
+            <div class='heart-btn'>
+              <%= image_tag "heart.png", class:"heart-icon" %>
+              <span class='heart-count'>0</span>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </li>
+
+    </ul>
+  </div>
+
+</div>
+
+<%= link_to('#', class: 'purchase-btn') do %>
+  <span class='purchase-btn-text'>記録</span>
+  <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+<% end %>
+
+<%= render "shared/footer" %>
