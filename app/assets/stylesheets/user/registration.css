@@ -56,9 +56,15 @@
   resize: none;
 }
 
+.info-text {
+  color: #888;
+  font-size: 15px;
+  margin-top: 3px;
+}
+
 .register-btn {
   width: 50%;
-  margin: 50px auto;
+  margin: 40px auto;
 }
 
 .register-red-btn {
