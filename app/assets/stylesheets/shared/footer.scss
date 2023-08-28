@@ -1,0 +1,19 @@
+.footer {
+  width: 100vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-color: #FFEBE5; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5vh 15vw;
+  color: #021bff;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+}
+
+.footer-explain {
+  font-size: 3vh;
+  line-height: 30px;
+}

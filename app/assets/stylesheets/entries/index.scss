@@ -1,0 +1,86 @@
+a {
+  text-decoration: none;
+}
+
+.main {
+  background: #FFEBE5; 
+}
+
+
+.entry-contents {
+  background-color: #FFEBE5; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10vh 0;
+}
+
+.entry-contents>.title {
+  font-size: 5vh;
+  line-height: 1.4;
+  font-weight: bold;
+}
+
+.entry-contents>.subtitle {
+  font-size: 3vh;
+  margin: 1vh 0;
+  text-decoration: none;
+  color: #3ccace;
+  font-weight: bold;
+}
+
+.entry-lists {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.entry-lists>.list {
+  width: 37vh;
+  padding: 1vw;
+  background-color: #FFEBE5; 
+}
+
+
+.entry-img-content {
+  position: relative;
+}
+
+.entry-img {
+  width: 33vh;
+  height: 33vh;
+}
+
+
+.entry-info {
+  background-color: #FFEBE5; 
+  color: black;
+  padding: 1vw;
+}
+
+.entry-name {
+  font-size: 2.5vh;
+}
+
+.entry-price {
+  font-size: 1.5vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.heart-btn {
+  display: flex;
+  align-items: center;
+}
+
+.heart-icon {
+  height: 2vh;
+  width: 2vh;
+  margin-right: 0.5vw;
+}
+
+.heart-count {
+  font-size: 2vh;
+}

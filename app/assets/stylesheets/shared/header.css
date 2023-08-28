@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+.top-page-header {
+  width: 100vw;
+  padding: 2vh 15vw;
+  display: flex;
+  flex-direction: column;
+  background-color: #FFEBE5;
+}
+
+.search-bar-contents {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.kiroku-icon {
+  width: 15vw;
+  margin-right: 15vw;
+  background-color: transparent;
+}
+
+.lists {
+  display: flex;
+  list-style: none;
+  align-items: flex-end;
+}
+
+.login {
+  text-decoration: none;
+  line-height: 20px;
+  margin-right: 3vw;
+  color: #2F3E51;
+  background-color: #FFEBE5;
+}
+
+.sign-up {
+  text-decoration: none;
+  color: #2F3E51;
+  background-color: #FFEBE5;
+}
