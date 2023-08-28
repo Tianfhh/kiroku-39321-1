@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   get 'entries/index'
   root to: "entries#index"
 
-  resources :entries, only: [:index, :new]
+  resources :entries, only: [:index, :new, :create]
 end
