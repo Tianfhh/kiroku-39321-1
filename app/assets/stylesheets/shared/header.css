@@ -28,16 +28,30 @@
   align-items: flex-end;
 }
 
+.lists li {
+  font-size: 25px; 
+}
+
 .login {
   text-decoration: none;
   line-height: 20px;
   margin-right: 3vw;
   color: #2F3E51;
-  background-color: #FFEBE5;
 }
 
 .sign-up {
   text-decoration: none;
   color: #2F3E51;
-  background-color: #FFEBE5;
+}
+
+.name {
+  text-decoration: none;
+  margin-right: 3vw;
+  color: #2F3E51;
+  font-weight: bold;
+}
+
+.logout {
+  text-decoration: none;
+  color: #2F3E51;
 }
