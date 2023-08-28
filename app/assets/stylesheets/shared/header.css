@@ -28,6 +28,10 @@
   align-items: flex-end;
 }
 
+.lists li {
+  font-size: 25px; 
+}
+
 .login {
   text-decoration: none;
   line-height: 20px;
