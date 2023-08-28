@@ -1,4 +1,5 @@
-[![Image from Gyazo](https://i.gyazo.com/e6871ce5782c3c1802b0baa97ad7bc3a.png)](https://gyazo.com/e6871ce5782c3c1802b0baa97ad7bc3a)
+[![Image from Gyazo](https://i.gyazo.com/92b90d33bd8197368f6fbd20ed0d83cc.png)](https://gyazo.com/92b90d33bd8197368f6fbd20ed0d83cc)
+
 
 
 ## usersテーブル
@@ -27,7 +28,6 @@
   
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
-| photo   | text       | null: false                    |
 | title   | string     | null: false                    |
 | text    | text       | null: false                    |
 | user    | references | null: false, foreign_key: true |
