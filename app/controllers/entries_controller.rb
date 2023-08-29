@@ -1,5 +1,5 @@
 class EntriesController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :edit, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit]
 
   def index
     @entries = Entry.all
@@ -39,6 +39,16 @@ class EntriesController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @entry = Entry.find(params[:id])
+    if @entry.user == current_user
+      @entry.destroy
+     redirect_to root_path
+   else
+     redirect_to root_path
+   end
   end
 
   private
