@@ -1,0 +1,9 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        name: ネーム
+      entry:
+        text: 記録内容
+        image: 記録写真
+        title: タイトル
