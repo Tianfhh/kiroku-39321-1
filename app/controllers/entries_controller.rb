@@ -1,5 +1,6 @@
 class EntriesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
     @entries = Entry.all
@@ -20,11 +21,9 @@ class EntriesController < ApplicationController
   end
 
   def show
-    @entry = Entry.find(params[:id])
   end
 
   def edit
-    @entry = Entry.find(params[:id])
     if user_signed_in? && @entry.user == current_user
 
     else
@@ -33,7 +32,6 @@ class EntriesController < ApplicationController
   end
 
   def update
-    @entry = Entry.find(params[:id])
     if @entry.update(entry_params)
       redirect_to entry_path(@entry)
     else
@@ -41,10 +39,23 @@ class EntriesController < ApplicationController
     end
   end
 
+  def destroy
+    if @entry.user == current_user
+      @entry.destroy
+     redirect_to root_path
+   else
+     redirect_to root_path
+   end
+  end
+
   private
 
   def entry_params
     params.require(:entry).permit(:user_id, :title, :text, :image)
+  end
+
+  def set_item
+    @entry = Entry.find(params[:id])
   end
 
 end
