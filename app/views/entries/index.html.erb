@@ -7,7 +7,7 @@
      <% @entries.each do |entry| %>
 
       <li class='list'>
-        <%= link_to entries_path(entry.id) do %>
+        <%= link_to entry_path(entry.id) do %>
         <div class='entry-img-content'>
           <%= image_tag entry.image, class: "entry-img" if entry.image.attached? %>
 
