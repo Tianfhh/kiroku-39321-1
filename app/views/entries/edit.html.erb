@@ -1,0 +1,52 @@
+<%= form_with model: @entry, local: true do |f| %>
+
+ <div class="entries-contents">
+  <header class="entries-header">
+    <%= link_to image_tag('kiroku-logo.png' , size: '185x50'), "/" %>
+  </header>
+  <div class="entries-main">
+    <h2 class="entries-title">記録内容を入力</h2>
+    
+    <%= render 'shared/error_messages', model: f.object %>
+
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        記録写真
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"entry-image" %>
+      </div>
+    </div>
+
+    <div class="new-entries">
+      <div class="weight-bold-text">
+        タイトル
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :title, class:"entries-text", id:"entry-name", maxlength:"40" %>
+      <div class="entries-explain">
+        <div class="weight-bold-text">
+          記録内容
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :text, class:"entries-text", id:"entry-info", rows:"7" ,maxlength:"1000" %>
+      </div>
+    </div>
+
+    <div class="entry-btn-contents">
+      <%= f.submit "変更する", class:"entry-btn" %>
+      <%=link_to '戻る', root_path, class:"back-btn" %>
+    </div>
+
+  </div>
+ 
+  <footer class="entries-sell-footer">
+    <%= link_to image_tag('kiroku-logo.png' , size: '185x50'), "/" %>
+  </footer>
+ </div>
+
+<% end %>

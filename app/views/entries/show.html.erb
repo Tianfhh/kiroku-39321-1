@@ -12,12 +12,10 @@
       <span><%= @entry.text %></span>
     </div>
 
-     <% if user_signed_in? %>
-       <% if current_user.id == @entry.user_id %>
-         <%= link_to "投稿の編集", "#", method: :get, class: "entry-red-btn" %>
+     <% if user_signed_in? && current_user.id == @entry.user_id %>
+         <%= link_to "投稿の編集", edit_entry_path(@entry), method: :get, class: "entry-red-btn" %>
            <p class="or-text">or</p>
          <%= link_to "削除", entry_path(@entry), method: :delete, class:"enrty-destroy" %>
-       <% end %>
      <% end %>
 
    
