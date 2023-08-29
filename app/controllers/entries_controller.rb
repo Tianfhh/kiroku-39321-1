@@ -21,6 +21,7 @@ class EntriesController < ApplicationController
   end
 
   def show
+    @user = @entry.user
   end
 
   def edit

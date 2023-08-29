@@ -32,6 +32,14 @@
         <%= image_tag "heart.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
         <span>お気に入り 0</span>
       </div>
+      <div class="report-btn">
+        <%= image_tag "follo.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
+        <% if @user.followed_by?(current_user) %>
+            <%=link_to "フォロー中", user_relationships_path(@user.id),class: "follo-btn" , method: :delete %>
+          <% else %>
+            <%=link_to "フォローする", user_relationships_path(@user.id),class: "follo-btn" ,method: :post %>
+        <% end %>
+      </div>
     </div>
 
   </div>
