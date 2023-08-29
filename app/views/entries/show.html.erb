@@ -1,0 +1,61 @@
+<%= render "shared/header" %>
+
+<div class="entry-show">
+  <div class="entry-box">
+    <h2 class="name">
+      <%= @entry.title %>
+    </h2>
+    <div class="entry-img-content">
+      <%= image_tag @entry.image ,class:"entry-box-img" %>
+    </div>
+    <div class="entry-explain-box">
+      <span><%= @entry.text %></span>
+    </div>
+
+     <% if user_signed_in? %>
+       <% if current_user.id == @entry.user_id %>
+         <%= link_to "投稿の編集", "#", method: :get, class: "entry-red-btn" %>
+           <p class="or-text">or</p>
+         <%= link_to "削除", entry_path(@entry), method: :delete, class:"enrty-destroy" %>
+       <% end %>
+     <% end %>
+
+   
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-item">投稿者</th>
+          <td class="detail-value"><%= @entry.user.name %></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="option">
+      <div class="favorite-btn">
+        <%= image_tag "heart.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
+        <span>お気に入り 0</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="comment-box">
+    <form>
+      <textarea class="comment-text"></textarea>
+      <button type="submit" class="comment-btn">
+
+        <span>コメントする<span>
+      </button>
+    </form>
+  </div>
+  <div class="links">
+    <a href="#" class="change-entry-btn">
+      ＜ 前の投稿
+    </a>
+    <a href="#" class="change-entry-btn">
+      後ろの投稿 ＞
+    </a>
+  </div>
+  
+</div>
+
+<%= render "shared/footer" %>
