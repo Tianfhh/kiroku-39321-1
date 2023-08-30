@@ -20,7 +20,7 @@
            <%= entry.user.name %>
             <div class='heart-btn'>
               <%= image_tag "heart.png", class:"heart-icon" %>
-              <span class='heart-count'>0</span>
+              <span class='heart-count'><%= entry.likes.count %></span>
             </div>
           </div>
         </div>
