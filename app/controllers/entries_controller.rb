@@ -3,8 +3,7 @@ class EntriesController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
-    @entries = Entry.all
-    @entries = Entry.includes(:likes).all
+    @entries = Entry.includes(:likes).order("created_at DESC")
   end
 
   def new
