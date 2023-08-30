@@ -4,6 +4,7 @@ class EntriesController < ApplicationController
 
   def index
     @entries = Entry.all
+    @entries = Entry.includes(:likes).all
   end
 
   def new

@@ -30,7 +30,13 @@
     <div class="option">
       <div class="favorite-btn">
         <%= image_tag "heart.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
-        <span>お気に入り 0</span>
+        <div id="like-btn<%= @entry.id %>">
+           <% if user_signed_in? && @entry.liked_by?(current_user)%>
+             <%=link_to "お気に入り済", entry_likes_path(@entry.id),  method: :delete, class: "entry_likes" %>
+           <% else %>
+             <%=link_to "お気に入り", entry_likes_path(@entry.id), method: :post, class: "entry_likes" %>
+           <% end %>
+        </div>
       </div>
       <div class="report-btn">
         <%= image_tag "follo.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
