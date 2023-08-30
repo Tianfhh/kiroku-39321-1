@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
-
+  before_action :authenticate_user!
+  
   def create
     @comment = Comment.new(comment_params)
     @entry = Entry.find(params[:entry_id])
