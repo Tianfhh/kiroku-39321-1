@@ -1,0 +1,1 @@
+document.getElementById('like-btn<%= @entry.id %>').innerHTML = "<%= j(render partial: 'likes/like', locals: {entry: @entry}) %>"
