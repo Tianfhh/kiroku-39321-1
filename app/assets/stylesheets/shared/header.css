@@ -32,6 +32,16 @@
   font-size: 25px; 
 }
 
+.lists-down {
+  width: 100%;
+  min-width: 800px;
+  height: 20px;
+  background-color: #FFEBE5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .login {
   text-decoration: none;
   line-height: 20px;
