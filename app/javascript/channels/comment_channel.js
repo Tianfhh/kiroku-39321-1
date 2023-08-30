@@ -1,7 +1,6 @@
 import consumer from "./consumer"
 
 if(location.pathname.match(/\/entries\/\d/)){
-  console.log("読み込み完了")
 
   consumer.subscriptions.create("CommentChannel", {
 connected() {
@@ -13,7 +12,7 @@ connected() {
   },
 
   received(data) {
-    // Called when there's incoming data on the websocket for this channel
+    console.log(data)
   }
 })
 
