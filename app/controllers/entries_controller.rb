@@ -1,6 +1,6 @@
 class EntriesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_entry, only: [:show, :edit, :update, :destroy]
 
   def index
     @entries = Entry.includes(:likes).order("created_at DESC")
@@ -22,6 +22,8 @@ class EntriesController < ApplicationController
 
   def show
     @user = @entry.user
+    @comments = @entry.comments.includes(:user)
+    @comment = Comment.new
   end
 
   def edit
@@ -55,7 +57,7 @@ class EntriesController < ApplicationController
     params.require(:entry).permit(:user_id, :title, :text, :image)
   end
 
-  def set_item
+  def set_entry
     @entry = Entry.find(params[:id])
   end
 
