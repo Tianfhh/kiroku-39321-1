@@ -9,4 +9,6 @@ class Entry < ApplicationRecord
 
   has_one_attached :image
 
+  has_many :likes
+  
 end
