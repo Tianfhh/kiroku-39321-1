@@ -5,8 +5,12 @@ Rails.application.routes.draw do
   root to: "entries#index"
 
   resources :entries, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
-    resources :likes, only: [:create, :destroy]
+    resource :likes, only: [:create, :destroy]
     resources :comments, only: :create
+  end
+
+  resources :entries, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
+    
   end
 
   resources :users do
