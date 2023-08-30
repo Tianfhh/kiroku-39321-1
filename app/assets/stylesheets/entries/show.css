@@ -122,8 +122,6 @@
 }
 
 
-/* /商品の概要 */
-
 .comment-box {
   width: 40vw;
   background-color: #fff;
@@ -164,7 +162,6 @@
   display: flex;
   justify-content: space-between;
   width: 50vw;
-
 }
 
 .change-entry-btn {
