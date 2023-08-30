@@ -1,5 +1,6 @@
 class LikesController < ApplicationController
-
+  before_action :authenticate_user!
+  
   def create
     like = current_user.likes.build(entry_id: params[:entry_id])
     like.save
