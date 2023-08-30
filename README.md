@@ -150,9 +150,8 @@ https://kiroku-tzbg.onrender.com
 
 ## likesテーブル
   
-| Column   | Type       | Options                        |
-| -------- | ---------- | ------------------------------ |
-| id       | references | null: false, foreign_key: true |
+| Column   | Type     | Options                          |
+| -------- | -------- | -------------------------------- |
 | like_id  | references | null: false, foreign_key: true |
 | user_id  | references | null: false, foreign_key: true |
 
