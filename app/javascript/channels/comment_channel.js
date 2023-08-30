@@ -2,7 +2,7 @@ import consumer from "./consumer"
 
 if(location.pathname.match(/\/entries\/\d/)){
 
-  cconsumer.subscriptions.create({
+  consumer.subscriptions.create({
     channel: "CommentChannel",
     entry_id: location.pathname.match(/\d+/)[0]
   }, {
@@ -19,7 +19,7 @@ if(location.pathname.match(/\/entries\/\d/)){
     const html = `
         <div class="comment">
           <p class="comment-user">${data.user.name}： </p>
-          <p>${data.comment.text}</p>
+          <p class="comment-text1">${data.comment.text}</p>
         </div>`
       const comments = document.getElementById("comments")
       comments.insertAdjacentHTML('beforeend', html)

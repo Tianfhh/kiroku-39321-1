@@ -48,9 +48,9 @@
 
   </div>
 
-  <div class="comments">
+  <div class="comments", id="comments">
      <h4 class="comment-title">＜コメント一覧＞</h4>
-      <% @comments.each do |comment| %>
+      <% @entry.comments.each do |comment| %>
         <div class="comment">
           <p class="comment-user"><%= comment.user.name %>：</p>
           <p class="comment-text1"><%= comment.text %></p>
@@ -59,7 +59,7 @@
   </div>
 
   <div class="comment-box">
-    <%= form_with(model: [@entry, Comment.new], local: true) do |form| %>
+    <%= form_with(model: [@entry, Comment.new], local: true, id:"comment-box") do |form| %>
       <%= form.text_area :text, class: "comment-text", placeholder: "コメントを入力してください" %>
       <%= form.button type: :submit, class: "comment-btn" do %>
         <span>コメントする<span>
