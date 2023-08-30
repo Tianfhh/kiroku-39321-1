@@ -4,9 +4,7 @@ Rails.application.routes.draw do
   get 'entries/index'
   root to: "entries#index"
 
-  resources :entries, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
-    resource :likes, only: [:create, :destroy]
-  end
+  resources :entries, only: [:index, :new, :create, :show, :edit, :update, :destroy]
 
   resources :users do
     resource :relationships, only: [:create, :destroy]
