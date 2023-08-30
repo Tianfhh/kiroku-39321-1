@@ -48,15 +48,25 @@
 
   </div>
 
-  <div class="comment-box">
-    <form>
-      <textarea class="comment-text"></textarea>
-      <button type="submit" class="comment-btn">
-
-        <span>コメントする<span>
-      </button>
-    </form>
+  <div class="comments">
+     <h4 class="comment-title">＜コメント一覧＞</h4>
+      <% @comments.each do |comment| %>
+        <div class="comment">
+          <p class="comment-user"><%= comment.user.name %>：</p>
+          <p class="comment-text1"><%= comment.text %></p>
+        </div>
+      <% end %>
   </div>
+
+  <div class="comment-box">
+    <%= form_with(model: [@entry, Comment.new], local: true) do |form| %>
+      <%= form.text_area :text, class: "comment-text", placeholder: "コメントを入力してください" %>
+      <%= form.button type: :submit, class: "comment-btn" do %>
+        <span>コメントする<span>
+      <% end %>
+    <% end %>
+  </div>
+
   <div class="links">
     <a href="#" class="change-entry-btn">
       ＜ 前の投稿
