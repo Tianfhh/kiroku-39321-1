@@ -16,7 +16,7 @@
           <h3 class='entry-name'>
             <%= entry.title %>
           </h3>
-          <div class='entry-price'>
+          <div class='entry-user'>
            <%= entry.user.name %>
             <div class='heart-btn'>
               <%= image_tag "heart.png", class:"heart-icon" %>
@@ -33,11 +33,11 @@
       <li class='list'>
         <%= link_to '#' do %>
         <%= image_tag "kistune.png", class: "entry-img" %>
-        <div class='item-info'>
-          <h3 class='item-name'>
+        <div class='entry-info'>
+          <h3 class='entry-name'>
             記録投稿してね！
           </h3>
-          <div class='entry-price'>
+          <div class='entry-user'>
            <%= "ユーザー名" %>
             <div class='heart-btn'>
               <%= image_tag "heart.png", class:"heart-icon" %>
