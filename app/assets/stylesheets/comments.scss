@@ -2,6 +2,13 @@
   margin-top: 10px;
 }
 
+.comment-title {
+  font-size: 20px;
+  text-decoration: none;
+  color: #f7029e;
+  font-weight: bold;
+}
+
 .comment {
   display: flex;
   align-items: center;
@@ -18,4 +25,33 @@
   margin: 0;
   font-size: 20px;
   margin-top: 10px;
+  width: 30vw;
+  word-wrap: break-word;
+}
+
+.comment-box {
+  width: 40vw;
+  background-color: #FFEBE5; 
+  margin: 5vh 0;
+  text-align: center;
+}
+
+.comment-text {
+  width: 50%;
+  height: 100px;
+  padding: 10px;
+  border: solid 2px #dedede;
+  resize: none;
+}
+
+.comment-btn {
+  line-height: 48px;
+  background-color: #3CCACE;
+  border: 1px solid #3CCACE;
+  color: #fff;
+  width: 50%;
+  min-width: 150px;
+  font-size: 18px;
+  border-radius: 100px;
+  margin-bottom: 2vh;
 }
