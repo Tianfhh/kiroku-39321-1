@@ -4,21 +4,40 @@
   <div class="user-contents">
     
     <% if current_user != @user %>
-      <% if @user.followed_by?(current_user) %>
-        <%=link_to "フォロー中", user_relationships_path(@user.id),class: "btn" , method: :delete %>
+      <% if @user.followed_by?(current_user) %>d
+        <%=link_to "フォロー中", user_relationships_path(@user.id), class: "follo-btn1", method: :delete %>
       <% else %>
-        <%=link_to "フォローする", user_relationships_path(@user.id),class: "btn" ,method: :post %>
+        <%=link_to "フォローする", user_relationships_path(@user.id), class: "follo-btn2", method: :post %>
       <% end %>
     <% end %>
     <h3>フォロー</h3>
     <% @user.followings.each do |user| %>
-      <p class=“f-user”><%= link_to user.name, user_path(user.id) %></p>
+      <p><%= link_to user.name, user_path(user.id) %></p>
     <% end %>
     <h3>フォロワー</h3>
     <% @user.followers.each do |user| %>
-      <p class=“f-user”><%= link_to user.name, user_path(user.id) %></p>
+      <p><%= link_to user.name, user_path(user.id) %></p>
     <% end %>
   </div>
+
+  <div class='entry-contents'>
+   <ul class='entry-lists'>
+    <li class='list'>
+     <% if @user_entries.present? %>
+        <% @user_entries.each do |entry| %>
+            <% if entry.image.attached? %>
+            <%= image_tag entry.image, class: "entry-img" %>
+            <% end %>
+            <h2><%= entry.title %></h2>
+            <p><%= entry.text %></p>
+        <% end %>
+     <% else %>
+       <p>No entries found.</p>
+     <% end %>
+    </li>
+   </ul>
+  </div>
+ 
 </div>
 
 <%= render "shared/footer" %>
