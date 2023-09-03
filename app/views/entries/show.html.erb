@@ -14,8 +14,7 @@
 
      <% if user_signed_in? && current_user.id == @entry.user_id %>
          <%= link_to "投稿の編集", edit_entry_path(@entry), method: :get, class: "entry-red-btn" %>
-           <p class="or-text">or</p>
-         <%= link_to "削除", entry_path(@entry), method: :delete, class:"enrty-destroy" %>
+         <%= link_to "削除", entry_path(@entry), method: :delete, class:"entry-destroy" %>
      <% end %>
 
    
@@ -29,18 +28,17 @@
     </table>
     <div class="option">
       <div class="favorite-btn">
-        <%= image_tag "heart.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
+        <%= image_tag "heart.png" ,class:"favorite-star-icon" ,width:"30",height:"30"%>
         <div id="like-btn<%= @entry.id %>">
            <%= render partial: "likes/like", locals: { entry: @entry } %>
         </div>
       </div>
       <div class="report-btn">
-        <%= image_tag "follo.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
         <% if current_user != @user %>
           <% if @user.followed_by?(current_user) %>
-            <%=link_to "フォロー中", user_relationships_path(@user.id),class: "follo-btn" , method: :delete %>
+            <%=link_to "フォロー中", user_relationships_path(@user.id),class: "follo-btn1" , method: :delete %>
           <% else %>
-            <%=link_to "フォローする", user_relationships_path(@user.id),class: "follo-btn" ,method: :post %>
+            <%=link_to "フォローする", user_relationships_path(@user.id),class: "follo-btn2" ,method: :post %>
           <% end %>
         <% end %>
       </div>
@@ -62,7 +60,7 @@
     <%= form_with(model: [@entry, Comment.new], local: true, id:"comment-box") do |form| %>
       <%= form.text_area :text, class: "comment-text", placeholder: "コメントを入力してください" %>
       <%= form.button type: :submit, class: "comment-btn" do %>
-        <span>コメントする<span>
+        <span>コメント<span>
       <% end %>
     <% end %>
   </div>
