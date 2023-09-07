@@ -23,17 +23,21 @@
   <div class='entry-contents'>
    <ul class='entry-lists'>
     <li class='list'>
-     <% if @user_entries.present? %>
+      <% if @user_entries.present? %>
         <% @user_entries.each do |entry| %>
+          <div class="entry-item">
             <% if entry.image.attached? %>
-            <%= image_tag entry.image, class: "entry-img" %>
+              <%= link_to entry_path(entry) do %>
+                <%= image_tag entry.image, class: "entry-img" %>
+              <% end %>
             <% end %>
-            <h2><%= entry.title %></h2>
+            <h2><%= link_to entry.title, entry_path(entry) %></h2>
             <p><%= entry.text %></p>
+          </div>
         <% end %>
-     <% else %>
-       <p>No entries found.</p>
-     <% end %>
+      <% else %>
+        <p>No entries found.</p>
+      <% end %>
     </li>
    </ul>
   </div>
