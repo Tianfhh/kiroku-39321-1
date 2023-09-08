@@ -1,7 +1,7 @@
 <%= render "shared/third-header" %>
 
 <div class="user-page">
-  <div class="user-contents">
+  <div class="user-contents1">
     
     <% if current_user != @user %>
       <% if @user.followed_by?(current_user) %>d
@@ -20,11 +20,11 @@
     <% end %>
   </div>
 
-  <div class='entry-contents'>
-   <ul class='entry-lists'>
-    <li class='list'>
+  <div class='user-contents2'>
+   <ul class='user-lists'>
       <% if @user_entries.present? %>
         <% @user_entries.each do |entry| %>
+        <li class='list'>
           <div class="entry-item">
             <% if entry.image.attached? %>
               <%= link_to entry_path(entry) do %>
@@ -34,11 +34,11 @@
             <h2><%= link_to entry.title, entry_path(entry) %></h2>
             <p><%= entry.text %></p>
           </div>
+        </li>
         <% end %>
       <% else %>
         <p>No entries found.</p>
       <% end %>
-    </li>
    </ul>
   </div>
  

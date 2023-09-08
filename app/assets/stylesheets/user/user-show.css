@@ -6,16 +6,30 @@
   align-items: center;
 }
 
-.user-contents {
+.user-contents1 {
   width: 50%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.user-entry {
-  width: 100vw;
+.user-contents2 {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-lists {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.user-lists>.list {
+  width: 37vh;
+  padding: 2vw;
+  background-color: #FFEBE5;
 }
