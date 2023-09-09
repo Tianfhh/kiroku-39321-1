@@ -39,7 +39,7 @@
   background: #fc0202;
   text-align: center;
   border-radius: 4%;
-  top: 60px;
+  top: 200px;
   right: 32px;
   position: fixed;
   padding: 15px;
@@ -54,5 +54,28 @@
 }
 
 .purchase-btn-icon1 {
+  width: 60%;
+}
+
+.purchase-btn2 {
+  width: 120px;
+  background: #fc02a0;
+  text-align: center;
+  border-radius: 4%;
+  top: 340px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+}
+
+.purchase-btn-text2 {
+  color: #fff;
+  display: block;
+  font-size: 18px;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+.purchase-btn-icon2 {
   width: 60%;
 }
