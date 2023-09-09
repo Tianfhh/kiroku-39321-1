@@ -1,0 +1,1 @@
+document.getElementById('report-btn<%= @user.id %>').innerHTML = "<%= j(render partial: 'relationships/relationship', locals: {user: @user}) %>"
