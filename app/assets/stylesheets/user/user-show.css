@@ -33,3 +33,26 @@
   padding: 2vw;
   background-color: #FFEBE5;
 }
+
+.purchase-btn1 {
+  width: 120px;
+  background: #fc0202;
+  text-align: center;
+  border-radius: 4%;
+  top: 60px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+}
+
+.purchase-btn-text1 {
+  color: #fff;
+  display: block;
+  font-size: 18px;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+.purchase-btn-icon1 {
+  width: 60%;
+}
