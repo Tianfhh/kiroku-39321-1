@@ -13,6 +13,20 @@
   align-items: center;
 }
 
+.follower {
+  font-size: 24px;
+  color: #ff4500; 
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.following {
+  font-size: 24px; 
+  color: #00bfff; 
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
 .user-contents2 {
   width: 50%;
   display: flex;
@@ -36,7 +50,7 @@
 
 .purchase-btn1 {
   width: 120px;
-  background: #fc0202;
+  background: #fc02a0;
   text-align: center;
   border-radius: 4%;
   top: 200px;
@@ -59,7 +73,7 @@
 
 .purchase-btn2 {
   width: 120px;
-  background: #fc02a0;
+  background: #fc0202;
   text-align: center;
   border-radius: 4%;
   top: 340px;
