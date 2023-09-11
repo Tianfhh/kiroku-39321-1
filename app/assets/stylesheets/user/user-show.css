@@ -16,16 +16,16 @@
 .user-contents2 {
   width: 50%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
 .user-lists {
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 0;
+  justify-content: center;
 }
 
 .user-lists>.list {
