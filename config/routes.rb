@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   get 'entries/index'
   root to: "entries#index"
+  get 'users/index', to: 'users#index', as: 'index_user'
 
   resources :entries, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
     resource :likes, only: [:create, :destroy]
@@ -17,6 +18,6 @@ Rails.application.routes.draw do
     resource :relationships, only: [:create, :destroy]
   end
 
-  resources :users, only: [:show]
+  resources :users, only: [:show, :index]
 
 end
