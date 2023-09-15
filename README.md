@@ -66,7 +66,7 @@ KIROKU
 
 
 ## テストコード
-[![Image from Gyazo](https://i.gyazo.com/36aa55ea1e287df6b7e27f9c6ab09711.png)](https://gyazo.com/36aa55ea1e287df6b7e27f9c6ab09711)
+[![Image from Gyazo](https://i.gyazo.com/38274b45c3e01c39c2624fe8ff86c83b.png)](https://gyazo.com/38274b45c3e01c39c2624fe8ff86c83b)
 
 
 

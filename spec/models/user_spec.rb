@@ -14,37 +14,37 @@ RSpec.describe User, type: :model do
      end
 
      context '内容に問題がある場合' do
-      it 'nameが空では登録できない' do
+      it 'ネームが空では登録できない' do
         @user.name = ''
         @user.valid?
         expect(@user.errors.full_messages).to include "ネームを入力してください"
       end
   
-      it "emailが空では登録できない" do
+      it "Eメールが空では登録できない" do
         @user.email = ''  
         @user.valid?
         expect(@user.errors.full_messages).to include "Eメールを入力してください"
       end
   
-      it "passwordが空だと登録できない" do
+      it "パスワードが空だと登録できない" do
         @user.password = ''  
         @user.valid?
         expect(@user.errors.full_messages).to include "パスワードを入力してください"
       end
   
-      it "passwordが英字のみでは登録できない" do
+      it "パスワードが英字のみでは登録できない" do
         @user.password = 'aaaaaaa'
         @user.valid?
         expect(@user.errors.full_messages).to include "パスワードは英数字混合で入力してください"
       end
   
-      it "passwordが数字のみでは登録できない" do
+      it "パスワードが数字のみでは登録できない" do
         @user.password = '0000000'
         @user.valid?
         expect(@user.errors.full_messages).to include "パスワードは英数字混合で入力してください"
       end
   
-      it "passwordが全角文字を含む場合は登録できない" do
+      it "パスワードが全角文字を含む場合は登録できない" do
         @user.password = 'aaa０00' 
         @user.valid?
         expect(@user.errors.full_messages).to include "パスワードは英数字混合で入力してください"
