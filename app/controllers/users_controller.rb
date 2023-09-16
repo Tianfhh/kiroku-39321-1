@@ -10,5 +10,10 @@ class UsersController < ApplicationController
       redirect_to root_path
     end
   end
-  
+
+  def index
+    @user = current_user
+    @users = User.all
+  end
+
 end
