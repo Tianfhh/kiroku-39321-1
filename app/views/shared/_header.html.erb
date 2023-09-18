@@ -3,7 +3,7 @@
     <%= link_to image_tag("kiroku-logo.png", class:"kiroku-icon"), "/" %>
     <ul class='lists'>
      <% if user_signed_in? %>
-      <li><%= link_to current_user.name, user_path(current_user), class: "name" %></li> 
+      <li><%= link_to current_user.name, index_user_path(current_user), class: "name" %></li>  
       <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout"  %></li>
      <% else %>
       <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
