@@ -194,7 +194,7 @@ KIROKU
 | ------- | ---------- | ------------------------------ |
 | title   | string     | null: false                    |
 | text    | text       | null: false                    |
-| user_id | references | null: false, foreign_key: true |
+| user    | references | null: false, foreign_key: true |
 
 
 ### Association
@@ -210,7 +210,7 @@ KIROKU
 | category | string     | null: false                    |
 | amount   | decimal    | null: false                    |
 | date     | date       | null: false                    |
-| user_id  | references | null: false, foreign_key: true |
+| user     | references | null: false, foreign_key: true |
 
 
 ### Association

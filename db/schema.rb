@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_08_30_050244) do
+ActiveRecord::Schema.define(version: 2023_09_19_120234) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -41,6 +41,15 @@ ActiveRecord::Schema.define(version: 2023_08_30_050244) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["entry_id"], name: "index_comments_on_entry_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "diaries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "title", null: false
+    t.text "text", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_diaries_on_user_id"
   end
 
   create_table "entries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -86,6 +95,7 @@ ActiveRecord::Schema.define(version: 2023_08_30_050244) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comments", "entries"
   add_foreign_key "comments", "users"
+  add_foreign_key "diaries", "users"
   add_foreign_key "entries", "users"
   add_foreign_key "likes", "entries"
   add_foreign_key "likes", "users"
