@@ -10,33 +10,38 @@
         <%=link_to "フォローする", user_relationships_path(@user.id), class: "follo-btn2", method: :post %>
       <% end %>
     <% end %>
-    <% if @user %>
-      <h3 class="follower">フォロー</h3>
-       <% @user.followings.each do |user| %>
-        <p><%= link_to user.name, user_path(user) %></p>
-      <% end %>
-      <h3 class="following">フォロワー</h3>
-       <% @user.followers.each do |user| %>
-         <p><%= link_to user.name, user_path(user) %></p>
-       <% end %>
+    <h3 class="follower">フォロー</h3>
+    <% @user.followings.each do |user| %>
+      <p><%= link_to user.name, user_path(user.id) %></p>
+    <% end %>
+    <h3 class="following">フォロワー</h3>
+    <% @user.followers.each do |user| %>
+      <p><%= link_to user.name, user_path(user.id) %></p>
     <% end %>
   </div>
 
   <div class='user-contents2'>
    <ul class='user-lists'>
-     <%= link_to(user_path(current_user), class: 'purchase-btn3') do %> 
-       <span class='purchase-btn-text3'>投稿</span>
-     <% end %>
-
-     <%= link_to(user_path(current_user), class: 'purchase-btn4') do %>
-       <span class='purchase-btn-text4'>日記</span>
-     <% end %>
-
-     <%= link_to(new_user_path, class: 'purchase-btn5') do %>
-       <span class='purchase-btn-text5'>記録</span>
-     <% end %>
+      <% if @user_entries.present? %>
+        <% @user_entries.each do |entry| %>
+        <li class='list'>
+          <div class="entry-item">
+            <% if entry.image.attached? %>
+              <%= link_to entry_path(entry) do %>
+                <%= image_tag entry.image, class: "entry-img" %>
+              <% end %>
+            <% end %>
+            <h2><%= link_to entry.title, entry_path(entry) %></h2>
+            <p><%= entry.text %></p>
+          </div>
+        </li>
+        <% end %>
+      <% else %>
+        <p>No entries found.</p>
+      <% end %>
    </ul>
   </div>
+ 
 </div>
 
 <%= link_to(new_entry_path, class: 'purchase-btn') do %>
