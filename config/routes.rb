@@ -10,16 +10,10 @@ Rails.application.routes.draw do
     resources :comments, only: :create
   end
 
-  resources :entries, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
-    
-  end
-
   resources :users do
     resource :relationships, only: [:create, :destroy]
   end
 
   resources :users, only: [:show, :index]
-
-  
 
 end
