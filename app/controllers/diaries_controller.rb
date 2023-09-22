@@ -1,7 +1,11 @@
 class DiariesController < ApplicationController
 
   def index
-    @entries = Entry.includes(:likes).order("created_at DESC")
+    @diaries = Diary.all
   end
   
+  def new
+    @diary = Diary.new
+  end
+
 end
