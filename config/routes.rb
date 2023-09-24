@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'entries/index'
   root to: "entries#index"
   get 'users/index', to: 'users#index', as: 'index_user'
+  get 'diaries/show', to: 'diaries#show', as: 'show_diary'
 
   resources :entries, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
     resource :likes, only: [:create, :destroy]
@@ -15,5 +16,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show, :index]
+
+  resources :diaries, only: [:show, :new]
 
 end
