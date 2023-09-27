@@ -28,11 +28,11 @@
        <span class='purchase-btn-text3'>投稿</span>
      <% end %>
 
-     <%= link_to(user_path(current_user), class: 'purchase-btn4') do %>
+     <%= link_to(index_diary_path, class: 'purchase-btn4') do %>
        <span class='purchase-btn-text4'>日記</span>
      <% end %>
 
-     <%= link_to(new_user_path, class: 'purchase-btn5') do %>
+     <%= link_to("#", class: 'purchase-btn5') do %>
        <span class='purchase-btn-text5'>記録</span>
      <% end %>
    </ul>
@@ -49,7 +49,7 @@
   <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon2" %>
 <% end %>
 
-<%= link_to(new_user_path, class: 'purchase-btn2') do %>
+<%= link_to("#", class: 'purchase-btn2') do %>
   <span class='purchase-btn-text2'>記録</span>
   <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon1" %>
 <% end %>
