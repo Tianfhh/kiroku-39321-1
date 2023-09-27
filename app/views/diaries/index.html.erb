@@ -3,22 +3,7 @@
 <div class="user-page">
   <div class="user-contents1">
     
-    <% if current_user != @user %>
-      <% if @user.followed_by?(current_user) %>d
-        <%=link_to "フォロー中", user_relationships_path(@user.id), class: "follo-btn1", method: :delete %>
-      <% else %>
-        <%=link_to "フォローする", user_relationships_path(@user.id), class: "follo-btn2", method: :post %>
-      <% end %>
-    <% end %>
-    <h3 class="follower">フォロー</h3>
-    <% @user.followings.each do |user| %>
-      <p><%= link_to user.name, user_path(user.id) %></p>
-    <% end %>
-    <h3 class="following">フォロワー</h3>
-    <% @user.followers.each do |user| %>
-      <p><%= link_to user.name, user_path(user.id) %></p>
-    <% end %>
-  </div>
+    
 
   <div class='user-contents2'>
    <ul class='user-lists'>
