@@ -1,7 +1,7 @@
 class DiariesController < ApplicationController
 
   def index
-    @diaries = Diary.all
+    @diaries = Diary.includes(:user).order("created_at DESC")
   end
   
   def new
@@ -11,17 +11,18 @@ class DiariesController < ApplicationController
   def create
     @diary = Diary.new(diary_params) 
     @diary.user = current_user
+
     if @diary.save
-      redirect_to diary_path(@diary)
+      redirect_to diaries_path(@diary)
     else
       render :new
     end
-
   end
 
   def destroy
     diary = diary.find(params[:id])
     diary.destroy
+    redirect_to diaries_path
   end
 
   private
