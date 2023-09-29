@@ -9,11 +9,11 @@
         <li class='list'>
           <div class="entry-item">
             <% if diary.image.attached? %>
-              <%= link_to diary_path(diary) do %>
+              <%= link_to diaries_path do %>
                 <%= image_tag diary.image, size: "300x200", class: "entry-img" %>
               <% end %>
             <% end %>
-            <h2><%= link_to diary.title, diary_path(diary) %></h2>
+            <h2><%= link_to diary.title, diaries_path(diary) %></h2>
             <p><%= diary.text %></p>
           </div>
         </li>
