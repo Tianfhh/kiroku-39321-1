@@ -1,5 +1,6 @@
 class DiariesController < ApplicationController
-
+  before_action :authenticate_user!
+  
   def index
     @user_diaries = current_user.diaries.order(created_at: :DESC)
   end
