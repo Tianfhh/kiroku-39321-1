@@ -26,6 +26,10 @@ class DiariesController < ApplicationController
     redirect_to diaries_path
   end
 
+  def show
+    @user = @diary.user
+  end
+
   private
   def diary_params
     params.require(:diary).permit(:user_id, :title, :text, :image)

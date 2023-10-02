@@ -1,0 +1,36 @@
+<%= render "shared/header" %>
+
+<div class="entry-show">
+  <div class="entry-box">
+    <h2 class="name">
+      <%= @diary.title %>
+    </h2>
+    <div class="entry-img-content">
+      <%= image_tag @diary.image ,class:"entry-box-img" %>
+    </div>
+    <div class="entry-explain-box">
+      <span><%= @diary.text %></span>
+    </div>
+
+     <% if user_signed_in? && current_user.id == @diary.user_id %>
+         <%= link_to "投稿の編集", edit_diary_path(@diary), method: :get, class: "entry-red-btn" %>
+         <%= link_to "削除", diary_path(@diary), method: :delete, class:"entry-destroy" %>
+     <% end %>
+      
+    </div>
+
+  </div>
+
+
+  <div class="links">
+    <a href="#" class="change-entry-btn">
+      ＜ 前の投稿
+    </a>
+    <a href="#" class="change-entry-btn">
+      後ろの投稿 ＞
+    </a>
+  </div>
+  
+</div>
+
+<%= render "shared/footer" %>
