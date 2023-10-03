@@ -13,11 +13,9 @@
     </div>
 
      <% if user_signed_in? && current_user.id == @diary.user_id %>
-         <%= link_to "投稿の編集", edit_diary_path(@diary), method: :get, class: "entry-red-btn" %>
+         <%= link_to "日記の編集", edit_diary_path, method: :get, class: "entry-red-btn" %>
          <%= link_to "削除", diary_path(@diary), method: :delete, class:"entry-destroy" %>
      <% end %>
-      
-    </div>
 
   </div>
 
