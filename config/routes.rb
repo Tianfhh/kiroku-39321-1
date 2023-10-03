@@ -17,6 +17,6 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :index]
 
-  resources :diaries, only: [:index, :new, :create, :show]
+  resources :diaries, only: [:index, :new, :create, :show, :edit, :update, :destroy]
 
 end
