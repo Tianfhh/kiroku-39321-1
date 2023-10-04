@@ -28,7 +28,9 @@ class DiariesController < ApplicationController
 
   def show
     @diary = Diary.find(params[:id])
-    @user = @diary.user
+    unless @diary.user_id == current_user&.id
+      redirect_to root_path
+    end
   end
 
   def edit
