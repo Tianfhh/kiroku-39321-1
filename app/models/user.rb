@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :likes
   has_many :comments
   has_many :diaries
+  has_many :records
   
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i, message: "は英数字混合で入力してください" }
 
