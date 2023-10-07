@@ -27,10 +27,13 @@ class DiariesController < ApplicationController
   end
 
   def show
-    @diary = Diary.find(params[:id])
-    unless @diary.user_id == current_user&.id
+    @diary = Diary.find_by(id: params[:id])
+  
+    if @diary.nil? || @diary.user_id != current_user&.id
       redirect_to root_path
+      return
     end
+    
   end
 
   def edit
