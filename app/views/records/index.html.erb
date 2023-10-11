@@ -1,2 +1,20 @@
-<h1>Records#index</h1>
-<p>Find me in app/views/records/index.html.erb</p>
+<%= render "shared/third-header" %>
+
+<div id="calendar"></div>
+
+<%= link_to(new_entry_path, class: 'purchase-btn') do %>
+  <span class='purchase-btn-text'>投稿</span>
+  <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+<% end %>
+
+<%= link_to(new_diary_path, class: 'purchase-btn1') do %>
+  <span class='purchase-btn-text1'>日記</span>
+  <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon2" %>
+<% end %>
+
+<%= link_to(new_user_path, class: 'purchase-btn2') do %>
+  <span class='purchase-btn-text2'>記録</span>
+  <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon1" %>
+<% end %>
+
+<%= render "shared/footer" %>
