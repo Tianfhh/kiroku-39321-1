@@ -18,5 +18,14 @@ require('../preview')
 //= require fullcalendar
 
 document.addEventListener('DOMContentLoaded', function() {
-  $('#calendar').fullCalendar();
+  $('#calendar').fullCalendar({
+    header: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'month,basicWeek,basicDay'
+    },
+    defaultView: 'month', // 初期表示ビュー
+    editable: true, // カレンダー上の日付をクリックして予定を作成可能にする
+    events: [] // イベントデータは空の配列
+  });
 });
